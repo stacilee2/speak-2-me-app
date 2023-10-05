@@ -1,0 +1,2 @@
+class Speechtask < ApplicationRecord
+end

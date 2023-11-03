@@ -15,6 +15,7 @@ require "action_cable/engine"
 # require "sprockets/railtie"
 # require "rails/test_unit/railtie"
 
+# config.action_cable.mount_path = '/cable'
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
@@ -24,6 +25,9 @@ module ReactRailsApiProjectTemplate
     # Adding cookies and session middleware
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore
+
+    # config.session_store :cookie_store, key: "speech_help", expire_after: 30.minutes
+    # config.secret_key_base = "parent_speech_help"
 
     # Use SameSite=Strict for all cookies to help protect against CSRF
     # https://owasp.org/www-community/SameSite

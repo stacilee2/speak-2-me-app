@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@rails/actioncable": "^7.1.1",
+    "react-icons": "^4.11.0",
+    "react-player": "^2.13.0",
+    "websocket": "^1.0.34"
+  }
+}

@@ -16,27 +16,27 @@ const SpeechTaskList = () => {
     setSelectedTask(null);
   }
 
-  let selectedComponent = null;
+    let selectedComponent = null;
 
-  switch (selectedTask) {
-    case "articulation":
-      selectedComponent = <ArticulationTasks handleBackClick={handleBackClick}/>;
-      break;
-    case "receptive-language":
-      selectedComponent = <ReceptiveLanguageTasks handleBackClick={handleBackClick} />;
-      break;
-    case "expressive-language":
-      selectedComponent = <ExpressiveLanguageTasks handleBackClick={handleBackClick} />;
-      break;
-    case "pragmatic-language":
-      selectedComponent = <PragmaticLanguageTasks handleBackClick={handleBackClick} />;
-      break;
-    case "fluency":
-      selectedComponent = <FluencyTasks handleBackClick={handleBackClick} />;
-      break;
-    default:
-      selectedComponent = null;
-  }
+    switch (selectedTask) {
+      case "articulation":
+        selectedComponent = <ArticulationTasks handleBackClick={handleBackClick}/>;
+        break;
+      case "receptive-language":
+        selectedComponent = <ReceptiveLanguageTasks handleBackClick={handleBackClick} />;
+        break;
+      case "expressive-language":
+        selectedComponent = <ExpressiveLanguageTasks handleBackClick={handleBackClick} />;
+        break;
+      case "pragmatic-language":
+        selectedComponent = <PragmaticLanguageTasks handleBackClick={handleBackClick} />;
+        break;
+      case "fluency":
+        selectedComponent = <FluencyTasks handleBackClick={handleBackClick} />;
+        break;
+      default:
+        selectedComponent = null;
+    }
 
   return (
     <div>

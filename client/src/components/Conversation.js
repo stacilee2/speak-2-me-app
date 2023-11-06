@@ -78,6 +78,7 @@ function Conversation({ conversationId }) {
         } else {
           const res = await r.json();
           setErrorsList(res.errors);
+          console.log(errorsList)
         }
       })
       setUserInput("");

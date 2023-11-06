@@ -2,7 +2,7 @@ class TherapyChatChannel < ApplicationCable::Channel
   def subscribed
     stream_from "TherapyChatChannel"
     ActionCable.server.broadcast(
-      "TherapyChatChannel_#{conversation_id}",
+      "TherapyChatChannel",
       "Channel is subscribed"
     )
   end

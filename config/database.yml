@@ -24,11 +24,6 @@ default: &default
 development:
   <<: *default
   database: react_rails_api_project_template_development
-  pool: 5
-  username: stacipayne
-  password: speak2me!
-  host: localhost
-  port: 5432
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.

@@ -4,5 +4,9 @@
     "react-icons": "^4.11.0",
     "react-player": "^2.13.0",
     "websocket": "^1.0.34"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@babel/plugin-transform-private-property-in-object": "^7.22.11"
   }
 }

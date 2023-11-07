@@ -3,6 +3,7 @@ import { UserContext } from "../context/user";
 import {AiFillEye} from "react-icons/ai";
 import {AiOutlineEyeInvisible} from "react-icons/ai";
 import Signup from "./Signup";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -10,6 +11,7 @@ function Login() {
   const [hidePassword, setHidePassword] = useState(true);
   const [errorsList, setErrorsList] = useState("");
   const { onLogin } = useContext(UserContext);
+  const navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -26,6 +28,7 @@ function Login() {
       .then(user => {
           if(!user.error) {
             onLogin(user)
+            navigate("/")
             setUsername("")
             setPassword("")
           } else {

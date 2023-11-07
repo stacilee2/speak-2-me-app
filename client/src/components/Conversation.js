@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { UserContext } from "../context/user";
 import { CableContext } from '../context/cable';
+import { useNavigate } from 'react-router-dom';
 
 function Conversation({ conversationId }) {
   const { user } = useContext(UserContext);
@@ -10,6 +11,7 @@ function Conversation({ conversationId }) {
   const [errorsList, setErrorsList] = useState([]);
   const cable = useContext(CableContext);
   const [currentTime, setCurrentTime] = useState(new Date());
+  const navigate = useNavigate();
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -53,6 +55,7 @@ function Conversation({ conversationId }) {
     )
     return () => {
       subscription.unsubscribe();
+      console.log("Cleanup conversation")
     };
   }, [cable, conversationId]);
 
@@ -84,6 +87,21 @@ function Conversation({ conversationId }) {
       setUserInput("");
   };
 
+  function handleEndChat(e) {
+    let chatId = e.target.id
+    console.log("I'm clicked")
+    fetch(`/conversations/${chatId}`, {
+      method: "DELETE",
+    }).then(response => {
+      if (response.ok) {
+        console.log('Conversation destroyed successfully.');
+        navigate("/speechtasks")
+      } else {
+        console.log('Failed to destroy conversation.');
+      }
+    });
+  }
+
   const previousMessagesList = previousMessages.map((message, index) => {
     return (
       <ul key={index} className='messages'>
@@ -113,6 +131,7 @@ function Conversation({ conversationId }) {
           />
           <button type="submit">SEND</button>
         </form>
+        <button type="button" onClick={handleEndChat} id={conversationId}>End Chat</button>
       </div>
     </div>
   );

@@ -33,4 +33,9 @@ class ConversationsController < ApplicationController
     render json: { message: 'Logged in successfully' }
   end
 
+  def destroy
+    conversation = Conversation.find(params[:id])
+    conversation.destroy
+  end
+
 end

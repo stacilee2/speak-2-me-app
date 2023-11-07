@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   mount ActionCable.server => '/cable'
 
-  resources :conversations, only: [:index, :create]
+  resources :conversations
 
   post "/conversations", to: "conversations#login"
 

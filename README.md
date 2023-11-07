@@ -7,13 +7,13 @@ The user can create a to-do list with ideas developed within the chat or from br
 This application uses React frontend and Rails backend.
 
 ## Features
-+Rails Action Cable websockets functionality for live chatting
-+Encrypted and secured user sign-up and login
-+Full create, read, update, and delete functionality for speech task to-do form
-+Up-to-date speech and language tasks for users to browse
--Videos
--Information sheets
--Online kid-friendly activities
+* Rails Action Cable websockets functionality for live chatting
+* Encrypted and secured user sign-up and login
+* Full create, read, update, and delete functionality for speech task to-do form
+* Up-to-date speech and language tasks for users to browse
+* Videos
+* Information sheets
+* Online kid-friendly activities
 
 ## Technologies
 
@@ -30,11 +30,11 @@ Speak2Me has been created by Staci Rosales and is a full-stack web appliction. F
 
 Many thanks to the following resources to help make my application great:
 
-+HomeSpeechHome.com
-+Peachie Speechie's SLP, Meredith Avren
-+Carrie Clark, Speech and Language Kids
-+boomlearning.com
-+Super Duper Publications at https://www.superduperinc.com/
-+https://guides.rubyonrails.org/action_cable_overview.html
-+https://javascript.plainenglish.io/using-action-cable-in-a-rails-react-app-part-i-configuration-c87b14f765a9
-+https://javascript.plainenglish.io/using-action-cable-in-a-rails-react-app-part-ii-implementation-db8b1762c794
++ HomeSpeechHome.com
++ Peachie Speechie's SLP, Meredith Avren
++ Carrie Clark, Speech and Language Kids
++ boomlearning.com
++ Super Duper Publications at https://www.superduperinc.com/
++ https://guides.rubyonrails.org/action_cable_overview.html
++ https://javascript.plainenglish.io/using-action-cable-in-a-rails-react-app-part-i-configuration-c87b14f765a9
++ https://javascript.plainenglish.io/using-action-cable-in-a-rails-react-app-part-ii-implementation-db8b1762c794

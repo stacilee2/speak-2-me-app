@@ -11,9 +11,9 @@ This application uses React frontend and Rails backend.
 * Encrypted and secured user sign-up and login
 * Full create, read, update, and delete functionality for speech task to-do form
 * Up-to-date speech and language tasks for users to browse
-* Videos
-* Information sheets
-* Online kid-friendly activities
+1. **Videos**
+2. **Information sheets**
+3. **Online kid-friendly activities**
 
 ## Technologies
 

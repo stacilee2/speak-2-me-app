@@ -10,7 +10,7 @@ function MySpeechTasks() {
   });
   const [selectedTasks, setSelectedTasks] = useState([]);
   const { user } = useContext(UserContext);
-
+  const [errorsList, setErrorsList] = useState([])
 
   useEffect(() => {
     fetch("/speechtasks")
@@ -47,10 +47,10 @@ function MySpeechTasks() {
       } else {
         r.json().then(r => {
           console.log(r.errors)
-          // setErrorsList(r.errors)
-          // setTimeout(() => {
-          //   setErrorsList([])
-          // }, 5000);
+          setErrorsList(r.errors)
+          setTimeout(() => {
+            setErrorsList([])
+          }, 5000);
         })
       }
     })
@@ -79,6 +79,9 @@ function MySpeechTasks() {
   return (
     <div className='task-form'>
       <h2>My Speech Tasks</h2>
+      <ul className="error-card">{errorsList.map((error, index) => 
+        <ul key={index}>{error}</ul>
+      )}</ul>
       <form onSubmit={handleTaskSubmit}>
         <label>Add your tasks to do here:</label> <br/>
         <input 

@@ -15,17 +15,23 @@
 
 .home-video{
   margin: auto;
+  height: 300px;
+  width: 500px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.logo {
+  margin: auto;
+  margin-top: 12px;
 }
 
 .speak2me-banner {
-  background-size:700px;
+  background-color: black;
 }
 
 .error-card {
-  /* background-color: rgb(255, 255, 255); */
-  padding: 0%;
-  margin: auto;
-  text-align: justify;
+  padding: 1%;
   font-family: Arial, Helvetica, sans-serif;
   font-size: medium;
   color: red;
@@ -154,6 +160,7 @@
 }
 .task-item {
   margin: auto;
+  padding: 2%;
 }
 
 .task-item:hover {

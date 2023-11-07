@@ -17,7 +17,6 @@ function App() {
 
   return (
     <div className="App">
-        Speak 2 Me App
         <UserProvider>
         <Navbar />
           <Routes>

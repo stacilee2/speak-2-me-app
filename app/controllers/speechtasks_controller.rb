@@ -28,7 +28,7 @@ class SpeechtasksController < ApplicationController
             render json: { errors: speechtask.errors.full_messages }, status: :unprocessable_entity
           end
         else
-          render json: { error: "Speechtask not found" }, status: :not_found
+          render json: { errors: "Speechtask not found" }, status: :not_found
         end
     end
       

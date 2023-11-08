@@ -113,7 +113,8 @@ function Conversation({ conversationId }) {
   return (
     <div>
       <div className="chat-messages" id="conversation">
-        <h4>Chat Here...</h4>
+        <h2>Therapy Chat</h2>
+        <hr />
         {previousMessagesList}
         {newMessages.map((message, index) => {
             return (
@@ -129,8 +130,11 @@ function Conversation({ conversationId }) {
             value={userInput}
             onChange={(e) => setUserInput(e.target.value)}
           />
+          <br />
+          <br />
           <button type="submit">SEND</button>
         </form>
+        <br />
         <button type="button" onClick={handleEndChat} id={conversationId}>End Chat</button>
       </div>
     </div>

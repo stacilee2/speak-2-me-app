@@ -40,7 +40,7 @@ const CreateConversation = () => {
         <p>Creating conversation...</p>
       ) : conversationId ? (
         <div>
-          Start Conversation Here:
+          <h3 className='chat-header'>Here you can chat with an available user, such as a parent or a therapist, and get ideas for your child to practice at home.</h3>
           <Conversation conversationId={conversationId} />
         </div>
       ) : (

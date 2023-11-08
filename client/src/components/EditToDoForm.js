@@ -4,6 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 function EditToDoForm() {
     const { task, taskId } = useParams();
     const [formData, setFormData] = useState({ assignment: task });
+    const [errorsList, setErrorsList] = useState([]);
     const navigate = useNavigate();
 
     function handleChange(e) {
@@ -26,20 +27,34 @@ function EditToDoForm() {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(formData),
-        })
-            .then((response) => response.json())
-            .then((updatedTask) => {
-                console.log(updatedTask);
-                navigate(`/myspeechtasks`); 
+            })
+            .then((r) => {
+                if (r.ok) {
+                    r.json().then((updatedTask) => {
+                        console.log(updatedTask);
+                        navigate(`/myspeechtasks`); 
+                    });
+                } else {
+                    r.json().then(r => {
+                        setErrorsList(r.errors)
+                        setTimeout(() => {
+                            setErrorsList([])
+                        }, 5000);
+                    });
+                }; 
             });
-    }
+        };
 
     return (
         <div>
-            <h4>Edit To-Do Form</h4>
+            <h4 className='edit-form'>Edit To-Do Form</h4>
             <p>
                 Change the selected task of "<strong>{task}</strong>" here.
             </p>
+            <ul className="error-card">{errorsList.map((error, index) => 
+                <ul key={index}>{error}</ul>
+                )}
+            </ul>
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"

@@ -130,8 +130,6 @@ function Conversation({ conversationId }) {
             value={userInput}
             onChange={(e) => setUserInput(e.target.value)}
           />
-          <br />
-          <br />
           <button type="submit">SEND</button>
         </form>
         <br />

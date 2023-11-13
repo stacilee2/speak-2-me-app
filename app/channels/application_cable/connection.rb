@@ -5,9 +5,7 @@ module ApplicationCable
     def connect
       self.current_user = User.find(cookies.encrypted["_session_id"]["user_id"])
     end
-
-    def disconnect
-      # Any cleanup work needed when the cable connection is cut.
-    end    
+   
   end
 end
+

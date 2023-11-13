@@ -18,7 +18,7 @@ class ConversationsController < ApplicationController
           
           @conversation = Conversation.where(sender_id: user_id1).where(recipient_id: user_id2).first
           if @conversation.blank?
-              @conversation = Conversation.create(sender_id: user_id1, recipient_id: user_id2, conversation_id: 0)                
+            @conversation = Conversation.create(sender_id: user_id1, recipient_id: user_id2, conversation_id: 0)                
           end
           render json: @conversation, status: :created   
       else
@@ -29,7 +29,6 @@ class ConversationsController < ApplicationController
   def login
     user = User.find(params[:user_id])
     user.update(available: true)
-    match_users
     render json: { message: 'Logged in successfully' }
   end
 

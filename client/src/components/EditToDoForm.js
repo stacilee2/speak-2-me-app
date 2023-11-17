@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 function EditToDoForm() {
     const { task, taskId } = useParams();
@@ -8,6 +8,7 @@ function EditToDoForm() {
     const [errorsList, setErrorsList] = useState([]);
     const [isTaskUpdated, setIsTaskUpdated] = useState(false);
     const [isCancelClicked, setIsCancelClicked] = useState(false);
+    const navigate = useNavigate();
 
     function handleChange(e) {
         const name = e.target.name;
@@ -37,7 +38,7 @@ function EditToDoForm() {
                     setIsTaskUpdated(true)
                     setTimeout(() => {
                         setIsTaskUpdated(false)
-                    }, 3000);
+                    }, 1500);
                 })
             } else {
                 r.json().then(r => {
@@ -54,8 +55,8 @@ function EditToDoForm() {
         setFormData({ assignment: task });
         setIsCancelClicked(true);
         setTimeout(() => {
-            setIsCancelClicked(false);
-        }, 3000);
+            navigate('/myspeechtasks')
+        }, 2000);
     };
 
     return (

@@ -1,4 +1,5 @@
-import React, {useState, useContext} from 'react';
+import React, {useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../context/user';
 import {AiFillEye} from "react-icons/ai";
 import {AiOutlineEyeInvisible} from "react-icons/ai";
@@ -13,10 +14,12 @@ function Signup() {
     const [hidePasswordConfirmation, setHidePasswordConfirmation] = useState(true)
     const [errorsList, setErrorsList] = useState([])
     const { signup } = useContext(UserContext)
+    const navigate = useNavigate();
 
     function handleSubmit(e) {
       e.preventDefault();
-      fetch("/signup", {
+
+        fetch("/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -38,14 +41,15 @@ function Signup() {
           }, 5000);
           } else {
             signup(user)
+            navigate("/")
             setFirstName("")
             setLastName("")
             setUsername("")
             setPassword("")
             setPasswordConfirmation("")
-          }
+          }  
         })
-    };
+    }
 
     function togglePassword() {
       hidePassword ? setHidePassword(false) : setHidePassword(true)

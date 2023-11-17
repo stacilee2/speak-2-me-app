@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 function EditToDoForm() {
     const { task, taskId } = useParams();
@@ -8,7 +8,6 @@ function EditToDoForm() {
     const [errorsList, setErrorsList] = useState([]);
     const [isTaskUpdated, setIsTaskUpdated] = useState(false);
     const [isCancelClicked, setIsCancelClicked] = useState(false);
-    const navigate = useNavigate();
 
     function handleChange(e) {
         const name = e.target.name;
@@ -61,19 +60,16 @@ function EditToDoForm() {
 
     return (
         <div>
-            <h2 className='edit-form'>Edit Task</h2>
-            <hr />
-            {isTaskUpdated && <div style={{ color: 'green' }}>Task updated successfully!</div>}
-            {isCancelClicked && <div style={{ color: 'red' }}>Task edit canceled.</div>}
-            <p>
-                <strong>{taskToEdit}</strong>
-                <br />
-            </p>
-            <ul className="error-card">
+             <ul className="error-card">
                 {errorsList.map((error, index) => (
                     <ul key={index}>{error}</ul>
                 ))}
             </ul>
+            <h4 className='edit-form'>Edit Task:</h4>
+            <p><strong>"{taskToEdit}"</strong></p>
+            {isTaskUpdated && <div style={{ color: 'green' }}>Task updated successfully!</div>}
+            {isCancelClicked && <div style={{ color: 'red' }}>Task edit canceled.</div>}
+           
             <form onSubmit={handleSubmit}>
                 <input
                     style={{ width: "350px", textAlign: "center" }}

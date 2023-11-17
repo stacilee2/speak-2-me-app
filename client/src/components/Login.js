@@ -10,7 +10,7 @@ function Login() {
   const [password, setPassword] = useState("");
   const [hidePassword, setHidePassword] = useState(true);
   const [errorsList, setErrorsList] = useState("");
-  const { onLogin } = useContext(UserContext);
+  const { onLogin, loggedIn } = useContext(UserContext);
   const navigate = useNavigate();
 
   function handleSubmit(e) {
@@ -44,40 +44,42 @@ function Login() {
       hidePassword ? setHidePassword(false) : setHidePassword(true)
     };
   
-  return (
-    <div>
-      <h4>Please Login or Sign-up Here.</h4>
-      <form onSubmit={handleSubmit} className="login-signup-form">
-        <p>LOGIN</p>
-        <ul className="error-card">{errorsList}</ul>
-        <hr />
-        <label>Username: </label>
-        <div className="username-container">
-          <input
-            type="text"
-            id="login-username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
+    if (!loggedIn) {
+      return (
+        <div>
+          <h4>Please Login or Sign-up Here.</h4>
+          <form onSubmit={handleSubmit} className="login-signup-form">
+            <p>LOGIN</p>
+            <ul className="error-card">{errorsList}</ul>
+            <hr />
+            <label>Username: </label>
+            <div className="username-container">
+              <input
+                type="text"
+                id="login-username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
+            </div>
+            <label>Password: </label>
+            <div className="password-container">
+              <input
+                type={ hidePassword ? "password" : "text" }
+                id="login-password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)} 
+              />
+              <div className="toggle-eye" onClick={togglePassword}>
+              { hidePassword ? <AiFillEye/> : <AiOutlineEyeInvisible/>}
+              </div>
+            </div>
+            <br />
+            <button type="submit">Login</button>
+          </form> 
+          <Signup togglePassword={togglePassword} />
         </div>
-        <label>Password: </label>
-        <div className="password-container">
-          <input
-            type={ hidePassword ? "password" : "text" }
-            id="login-password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)} 
-          />
-          <div className="toggle-eye" onClick={togglePassword}>
-          { hidePassword ? <AiFillEye/> : <AiOutlineEyeInvisible/>}
-          </div>
-        </div>
-        <br />
-        <button type="submit">Login</button>
-      </form> 
-      <Signup togglePassword={togglePassword} />
-    </div>
-  )
+      )
+    }
 };
 
 export default Login;

@@ -6,16 +6,9 @@ const Home = () => {
   return (
     <div className="home-container">
       <img src={Speak} alt="speakLogo" className="logo" style={{ width: '200px', }}/>
-      <h3>This application offers real-time chat with other parents or therapists to get ideas for helping your child at home.</h3>
+      <h4>This application offers real-time chat with other parents or therapists to get ideas for helping your child at home.</h4>
       <h4>What do we offer? </h4>
-        <h4>Video, information, tasks in the following areas:</h4>
-        <div className='home-page-tasks'>
-          <ul>-Articulation </ul>
-          <ul>-Receptive Language</ul>
-          <ul>-Expressive Language</ul>
-          <ul>-Pragmatic Language</ul>
-          <ul>-Fluency</ul>
-        </div>
+        <h4>Video, information, tasks in the following areas: articulation, receptive language, expressive language, pragmatic language, and fluency.</h4>
         <iframe
           title="What Does a Speech Language Therapist Do?"
           className='home-video'

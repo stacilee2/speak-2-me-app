@@ -22,6 +22,19 @@ This application uses React frontend and Rails backend.
 ![HTML 5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS 3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
+## Set-up
+After you clone this git, follow these steps for set-up:
++ brew tap redis-stack/redis-stack
++ brew install --cask redis-stack
++ gem install redis
++ bundle install
++ npm install --prefix client
++ npm start --prefix client
++ rails s
+
+To test out the chat:
++ Open incognito window, and login a new user
+
 ## Acknowledgements
 
 Speak2Me has been created by Staci Rosales and is a full-stack web appliction. Future projects to benefit this app would be an added payment and subscription capability.
